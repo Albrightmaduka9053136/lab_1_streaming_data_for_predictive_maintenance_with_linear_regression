@@ -1,0 +1,2 @@
+# lab_1_streaming_data_for_predictive_maintenance_with_linear_regression
+lab 1 streaming data for predictive maintenance with linear regression
