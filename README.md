@@ -101,13 +101,30 @@ Red = ERROR events (residual ≥ MaxC for ≥ T seconds)
 - the summary of the alerts and errors that was seen
 
  Outputs (CSV & Plots)
-- `data/original_training_data.csv`, `data/synthetic_data.csv`
-- `artifacts/model_params.csv`
-- `artifacts/train_residuals.csv`, `artifacts/test_residuals.csv`
-- `artifacts/thresholds.csv`, `artifacts/alerts_log.csv`, `artifacts/summary_dashboard.csv`
-- Plots in `artifacts/plots/`
-
----
+![axis1_test_](./artifacts/plots/axis1_test_observed_vs_regression.png)
+![axis1_test](./artifacts/plots/axis1_test_residuals.png)
+![axis1_train](./artifacts/plots/axis1_train_regression.png)
+![axis2_test](./artifacts/plots/axis2_test_observed_vs_regression.png)
+[axis2_test_](./artifacts/plots/axis2_test_residuals.png)
+![axis2_test](./artifacts/plots/axis2_train_regression.png)
+![axis3_train](./artifacts/plots/axis3_test_observed_vs_regression.png)
+![axis3_test](./artifacts/plots/axis3_test_residuals.png)
+![axis3_test](./artifacts/plots/axis3_train_regression.png)
+![axis4_test](./artifacts/plots/axis4_test_observed_vs_regression.png)
+![axis4_test](./artifacts/plots/axis4_test_residuals.png)
+![axis4_train](./artifacts/plots/axis4_train_regression.png)
+![axis5_test_](./artifacts/plots/axis5_test_observed_vs_regression.png)
+![axis5_test](./artifacts/plots/axis5_test_residuals.png)
+![axis5_train](./artifacts/plots/axis5_train_regression.
+![axis6_test_](./artifacts/plots/axis6_test_observed_vs_regression.png)
+![axis6_test](./artifacts/plots/axis6_test_residuals.png)
+![axis6_train](./artifacts/plots/axis6_train_regression.
+![axis7_test_](./artifacts/plots/axis7_test_observed_vs_regression.png)
+![axis7_test](./artifacts/plots/axis7_test_residuals.png)
+![axis7_train](./artifacts/plots/axis7_train_regression.
+![axis8_test_](./artifacts/plots/axis8_test_observed_vs_regression.png)
+![axis8_test](./artifacts/plots/axis8_test_residuals.png)
+![axis8_train](./artifacts/plots/axis8_train_regression.
 
 ## Data Dictionary (key fields)
 - **time** — original timestamp (ISO‑8601, UTC)
