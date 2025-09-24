@@ -1,27 +1,43 @@
-# lab_1_streaming_data_for_predictive_maintenance_with_linear_regression
+# Lab 1: Streaming Data for Predictive Maintenance with Linear Regression–Based Alerts
 
-Title: Predictive maintenance pipeline
- 
-Aim: The aim is to detect early signs of abnormal bahavior of a robot before it breaks down. By using the time on the X - axis and current readings on the Y - axis.
+**Repository:** `lab_1_streaming_data_for_predictive_maintenance_with_linear_regression`  
+**Title:** **Predictive maintenance pipeline**  
+**Author:** Albright Maduka  
+**Course:** CSCN 8010
 
-Requirements and Setup
-Install;
-- pandas
-- numpy
-- matplotlib
-- scikit-learn
-- SQLAlchemy
+---
+
+##  Aim
+Detect early signs of abnormal behavior in a robot **before** breakdown by modeling **time (X‑axis)** against **current readings (Y‑axis)** and flagging anomalies with thresholded residuals.
+
+---
+
+##  Requirements & Setup
+
+**Python packages**
+- pandas  
+- numpy  
+- matplotlib  
+- scikit-learn  
+- SQLAlchemy  
 - psycopg2-binary
 
-using bash 
-enter
+**Install (bash):**
+bash
+python -m venv .venv
+.\.venv\Scripts\activate
 
+
+# install the requirement
 pip install -r requirements.txt
 
-
-Steps
-
-Import libraries: pandas, numpy, matplotlib, sqlalchemy, psycopg2, sklearn
+`requirements.txt`
+pandas
+numpy
+matplotlib
+scikit-learn
+SQLAlchemy
+psycopg2-binary
 
 1.  Database Integration 
 
@@ -84,4 +100,37 @@ Red = ERROR events (residual ≥ MaxC for ≥ T seconds)
 6.4 Summary Dashoard of Alerts and Errors : 
 - the summary of the alerts and errors that was seen
 
+ Outputs (CSV & Plots)
+- `data/original_training_data.csv`, `data/synthetic_data.csv`
+- `artifacts/model_params.csv`
+- `artifacts/train_residuals.csv`, `artifacts/test_residuals.csv`
+- `artifacts/thresholds.csv`, `artifacts/alerts_log.csv`, `artifacts/summary_dashboard.csv`
+- Plots in `artifacts/plots/`
 
+---
+
+## Data Dictionary (key fields)
+- **time** — original timestamp (ISO‑8601, UTC)
+- **__time_s** — elapsed seconds from the first training timestamp (float)
+- **axis1 … axis8** — current readings per axis (float)
+- **{axis}_resid** — residuals = observed − predicted (float)
+- **thresholds.csv** — columns: `axis`, `sigma`, `MinC`, `MaxC`, `T_seconds`
+- **alerts_log.csv** — columns: `axis`, `level`, `start_time`, `end_time`, `duration_sec`, `peak_residual`
+- **summary_dashboard.csv** — columns: `axis`, `alerts`, `errors`, `longest_event_s`
+
+## Notes
+- `T_seconds` defaults to **30 s** but is configurable in code.
+- Ensure your synthetic data’s timestamp base aligns with training `t0` so `__time_s` is comparable.
+- If your plots or logs are empty, verify thresholds are not too strict and that residuals are being computed.
+
+---
+
+## Quickstart
+1. Install requirements (see above).
+2. Run your notebook or script to:
+   - Export training CSV from NeonDB
+   - Generate synthetic CSV
+   - Train regression models
+   - Compute residuals, thresholds, and events
+   - Render plots and dashboards
+3. Review CSV outputs in `artifacts/` and plots in `artifacts/plots/`.
